@@ -79,7 +79,7 @@ export function validateAndNormalizeChapters(
   let afterTOC = false;
   return chapters.map((chapter, index) => {
     const ch = validateAndNormalizeChapter(chapter, index);
-    ch.content = normalizeHTML.call(this, index, chapter.content);
+    ch.content = this.options.noFormatHTML ? chapter.content : normalizeHTML.call(this, index, chapter.content);
     if (afterTOC && ch.beforeToc) {
       this.warn(
         `Warning (content[${index}]): Got \`beforeToc=true\` after at least one \`beforeToc=false\`. Chapters will be out of order.`,

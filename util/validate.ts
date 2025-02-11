@@ -37,6 +37,7 @@ export type Options = {
   batchSize?: number;
   ignoreFailedDownloads?: boolean;
   verbose?: boolean | LogFn;
+  noFormatHTML?: boolean;
 };
 
 const name = ow.optional.any(

@@ -36,7 +36,11 @@ epub(options, [
     title: "Chapter 1",
     content: "<p>Hello world!</p>",
   },
-]).then(
+], {
+  verbose: true,
+  version: 1.1,
+  noFormatHTML: true, // avoid reformat HTML
+}).then(
   (content) => {
     Deno.writeFileSync("book.epub", content);
   },

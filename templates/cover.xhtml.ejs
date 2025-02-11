@@ -6,25 +6,25 @@
   <title>
     <%= title %>
   </title>
-    <style>
-        body {
-            margin: 0em;
-            padding: 0em;
-        }
+  <style>
+    body {
+      margin: 0em;
+      padding: 0em;
+    }
 
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
 </head>
 
 <body>
-    <div style="text-align: center; padding: 0pt; margin: 0pt;">
-        <% if (cover) { %>
-          <img src="cover.<%= cover.extension %>" alt="Cover" />
-        <% } %>
-    </div>
+  <div style="text-align: center; padding: 0pt; margin: 0pt;">
+    <% if (cover) { %>
+      <img src="cover.<%= cover.extension %>" alt="Cover" />
+      <% } %>
+  </div>
 </body>
 
 </html>

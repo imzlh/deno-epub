@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "test": "deno test -A ./tests/mod.ts"
+    "conv": "deno run -A cmd.ts"
   },
   "imports": {
     "zip": "jsr:@quentinadam/zip@^0.1.4",

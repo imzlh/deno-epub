@@ -21,23 +21,24 @@ import { EPub } from "./epub.ts";
  * ```
  * @param optionsOrTitle The options or title of the EPub.
  * @param content The content of the EPub.
- * @param args Additional arguments for the EPub generation.
+ * @param opts Additional options for the EPub generation.
  * @returns Buffer of the generated EPub file.
  */
 export default function (
   optionsOrTitle: Options | string,
   content: Content,
-  ...args: (boolean | number)[]
+  opts?: {
+    verbose?: boolean;
+    version?: number;
+    noFormatHTML?: boolean;
+  }
 ): Promise<Uint8Array> {
-  ow(optionsOrTitle, ow.any(optionsPredicate, ow.string));
   const options = ow.isValid(optionsOrTitle, ow.string)
     ? { title: optionsOrTitle }
     : optionsOrTitle;
-  ow(args, ow.array.ofType(ow.any(ow.boolean, ow.number)));
-  args.forEach((arg) => {
-    if (ow.isValid(arg, ow.boolean)) options.verbose = arg;
-    else options.version = arg;
-  });
+  opts?.verbose && (options.verbose = true);
+  opts?.version && (options.version = opts.version);
+  opts?.noFormatHTML && (options.noFormatHTML = true);
 
   return new EPub(options, content).genEpub();
 };
