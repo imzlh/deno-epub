@@ -1,4 +1,5 @@
-import { fs, path, posixPath } from "../deps.ts";
+import * as path from "path";
+import * as fs from "fs";
 export async function buildBundle(folder: string) {
   const bundles: Record<string, string> = {};
   const currentUrl = new URL(".", import.meta.url);

@@ -1,4 +1,4 @@
-import { mime } from "../deps.ts";
+import { lookup, extensionsFromMimetype } from "jsr:@geacko/deno-mimetypes";
 import type { EPub } from "../epub.ts";
 import { fixHTML } from "./html-parse.ts";
 import { uuid } from "./other.ts";
@@ -16,13 +16,14 @@ function imgSrc(this: EPub, url: string) {
   let image = this.images.find((i) => i.url === url);
 
   if (!image) {
-    const mediaType = mime.getType(url.replace(/\?.*/, "")) || "";
+    const _m = extensionsFromMimetype(url.replace(/\?.*/, "")) || "",
+      mediaType = typeof _m == 'string' ? _m : _m[0];
 
     image = {
       url,
       mediaType,
       id: uuid(),
-      extension: mime.getExtension(mediaType) || "",
+      extension: lookup(mediaType)?.type || "",
     };
 
     this.images.push(image);

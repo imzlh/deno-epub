@@ -1,4 +1,4 @@
-import { ow } from "./deps.ts";
+import ow from "ow";
 import { Content, Options, optionsPredicate } from "./util/validate.ts";
 
 import { EPub } from "./epub.ts";

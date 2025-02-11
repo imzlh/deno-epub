@@ -1,5 +1,11 @@
 {
   "tasks": {
     "test": "deno test --unstable -A --allow-read --allow-write  --allow-env --allow-run --allow-hrtime ./tests/mod.ts"
+  },
+  "imports": {
+    "@quentinadam/zip": "jsr:@quentinadam/zip@^0.1.4",
+    "ow": "https://esm.sh/ow@2.0.0",
+    "path": "jsr:@std/path",
+    "fs": "jsr:@std/fs"
   }
 }

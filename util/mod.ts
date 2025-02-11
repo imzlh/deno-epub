@@ -1,6 +1,7 @@
 import uslug from "https://esm.sh/uslug@1.0.4";
 
-import { mime, ow } from "../deps.ts";
+import { lookup } from "jsr:@geacko/deno-mimetypes";
+import ow from 'ow';
 import { EPub } from "../epub.ts";
 import { normalizeHTML } from "./html.ts";
 import { removeDiacritics } from "./other.ts";
@@ -62,7 +63,7 @@ export const validateAndNormalizeOptions = (options: Options) => {
   opt.author = normName(opt.author);
   opt.fonts = opt.fonts.map((font) => ({
     ...font,
-    mediaType: mime.getType(font.filename)!,
+    mediaType: lookup(font.filename.split(".").pop()!)?.type || 'application/octet-stream',
   }));
   opt.date = new Date(opt.date).toISOString();
   opt.lang = removeDiacritics(opt.lang);

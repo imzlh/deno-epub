@@ -1,9 +1,4 @@
-import {
-  type Merge,
-  type ObjectPredicate,
-  ow,
-  type Predicate,
-} from "../deps.ts";
+import ow, { ObjectPredicate, Predicate } from 'ow';
 
 export type Chapter = {
   title?: string;
@@ -109,6 +104,7 @@ type NonNullableObject<T> = T extends Record<string, unknown>
   : T extends Array<infer R> ? Array<NonNullableObject<R>>
   : NonNullable<T>;
 
+type Merge<T, U> = Omit<T, Extract<keyof T, keyof U>> & U;
 export type NormOptions = NonNullableObject<
   Merge<Options, {
     author: string[];

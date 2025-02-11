@@ -1,7 +1,7 @@
-export { normalizeSync as removeDiacritics } from "../deps.ts";
+export { normalize as removeDiacritics } from "path";
 
 export * from "./fetchable.ts";
-import { dejs, path } from "../deps.ts";
+import * as dejs from "jsr:@hongminhee/dejs";
 import fetchable from "./fetchable.ts";
 import assets from "../assets.json" assert { type: "json" };
 
@@ -25,8 +25,7 @@ export const retryFetch = async (
       return await fetchable(url, timeout);
     } catch {
       log(
-        `Failed to fetch \`${url}\` ${i + 1} ${
-          i === 0 ? "time" : "times"
+        `Failed to fetch \`${url}\` ${i + 1} ${i === 0 ? "time" : "times"
         }. Retrying...`,
       );
     }

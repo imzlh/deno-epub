@@ -1,14 +1,15 @@
 # Deno Epub generator
 
 A wrapper around [epub-gen-memory](https://github.com/cpiber/epub-gen-memory)
-for deno.
+for deno. improved by imzlh to update dep version and fix errors in Deno 2.x
+published in JSR: `@imzlh/epub`
 
 ## Usage:
 
 Create epub file:
 
 ```ts
-import epub from "https://deno.land/x/epubgen/mod.ts";
+import epub from "jsr:@imzlh/epub";
 
 epub(options, chapters).then(
   (content) => console.log("Ebook Generated Successfully!"),
@@ -19,8 +20,8 @@ epub(options, chapters).then(
 ## Example
 
 ```ts
-import epub from "https://deno.land/x/epubgen/mod.ts";
-import * as path from "https://deno.land/std@0.159.0/path/mod.ts";
+import epub from "jsr:@imzlh/epub";
+import * as path from "jsr:@std/path";
 const options = {
   title: "Book Title",
   description: "This is a test book",

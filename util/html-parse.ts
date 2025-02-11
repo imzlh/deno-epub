@@ -26,7 +26,7 @@ export function fixHTML(this: EPub, index: number, html: string, imgCB: CB) {
     for (const name of Object.keys(element.attribs)) {
       if (
         allowedAttributes.indexOf(name as typeof allowedAttributes[number]) ===
-          -1
+        -1
       ) {
         this.warn(
           `Warning (content[${index}]): attribute ${name} isn't allowed.`,
