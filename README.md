@@ -2,14 +2,14 @@
 
 A wrapper around [epub-gen-memory](https://github.com/cpiber/epub-gen-memory)
 for deno. improved by imzlh to update dep version and fix errors in Deno 2.x
-published in JSR: `@imzlh/epub`
+published in JSR: `@izg/epub`
 
 ## Usage:
 
 Create epub file:
 
 ```ts
-import epub from "jsr:@imzlh/epub";
+import epub from "jsr:@izg/epub";
 
 epub(options, chapters).then(
   (content) => console.log("Ebook Generated Successfully!"),
@@ -20,7 +20,7 @@ epub(options, chapters).then(
 ## Example
 
 ```ts
-import epub from "jsr:@imzlh/epub";
+import epub from "jsr:@izg/epub";
 import * as path from "jsr:@std/path";
 const options = {
   title: "Book Title",
