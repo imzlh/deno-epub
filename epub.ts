@@ -1,4 +1,4 @@
-import { create } from '@quentinadam/zip';
+import { create } from 'zip';
 
 import { Image } from "./util/html.ts";
 import {

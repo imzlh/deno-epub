@@ -3,7 +3,7 @@ export { normalize as removeDiacritics } from "path";
 export * from "./fetchable.ts";
 import * as dejs from "jsr:@hongminhee/dejs";
 import fetchable from "./fetchable.ts";
-import assets from "../assets.json" assert { type: "json" };
+import assets from "../assets.json" with { type: "json" };
 
 export const encoder = new TextEncoder();
 

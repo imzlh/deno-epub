@@ -9,7 +9,10 @@
     "jsr:@quentinadam/uint8array-extension@~0.1.5": "0.1.5",
     "jsr:@quentinadam/zip@~0.1.4": "0.1.4",
     "jsr:@std/bytes@^1.0.2": "1.0.5",
+    "jsr:@std/fs@*": "1.0.10",
     "jsr:@std/io@~0.224.9": "0.224.9",
+    "jsr:@std/path@*": "1.0.8",
+    "jsr:@std/path@^1.0.8": "1.0.8",
     "npm:@types/node@*": "22.5.4"
   },
   "jsr": {
@@ -52,11 +55,20 @@
     "@std/bytes@1.0.5": {
       "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
     },
+    "@std/fs@1.0.10": {
+      "integrity": "bf041f9d7a0a460817f0421be8946d0e06011b3433e6c83a215628de5e3c7c2c",
+      "dependencies": [
+        "jsr:@std/path@^1.0.8"
+      ]
+    },
     "@std/io@0.224.9": {
       "integrity": "4414664b6926f665102e73c969cfda06d2c4c59bd5d0c603fd4f1b1c840d6ee3",
       "dependencies": [
         "jsr:@std/bytes"
       ]
+    },
+    "@std/path@1.0.8": {
+      "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
     }
   },
   "npm": {
@@ -90,7 +102,6 @@
     "https://esm.sh/identifier-regex@^1.0.0?target=denonext": "https://esm.sh/identifier-regex@1.0.0?target=denonext",
     "https://esm.sh/is-identifier@^1.0.0?target=denonext": "https://esm.sh/is-identifier@1.0.1?target=denonext",
     "https://esm.sh/nth-check@^2.0.1?target=denonext": "https://esm.sh/nth-check@2.1.1?target=denonext",
-    "https://esm.sh/ow": "https://esm.sh/ow@2.0.0",
     "https://esm.sh/reserved-identifiers@^1.0.0?target=denonext": "https://esm.sh/reserved-identifiers@1.0.0?target=denonext",
     "https://esm.sh/super-regex@^1.0.0?target=denonext": "https://esm.sh/super-regex@1.0.0?target=denonext",
     "https://esm.sh/time-span@^5.1.0?target=denonext": "https://esm.sh/time-span@5.1.0?target=denonext",
@@ -171,7 +182,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@quentinadam/zip@~0.1.4"
+      "jsr:@quentinadam/zip@~0.1.4",
+      "jsr:@std/fs@*",
+      "jsr:@std/path@*"
     ]
   }
 }
