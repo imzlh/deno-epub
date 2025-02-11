@@ -1,6 +1,6 @@
-import uslug from "https://esm.sh/uslug@1.0.4";
+import uslug from "npm:uslug@^1.0.4";
 
-import { lookup } from "jsr:@geacko/deno-mimetypes";
+import { lookup } from "jsr:@geacko/deno-mimetypes@^1.0.4";
 import ow from 'ow';
 import { EPub } from "../epub.ts";
 import { normalizeHTML } from "./html.ts";

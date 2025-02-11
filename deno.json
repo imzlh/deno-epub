@@ -4,11 +4,12 @@
   },
   "imports": {
     "zip": "jsr:@quentinadam/zip@^0.1.4",
-    "ow": "https://esm.sh/ow@2.0.0",
-    "path": "jsr:@std/path",
-    "fs": "jsr:@std/fs"
+    "ow": "npm:ow@^2.0.0",
+    "path": "jsr:@std/path@^1.0.8",
+    "fs": "jsr:@std/fs@^1.0.10"
   },
-  "exports": {
-    ".": "./mod.ts"
-  }
+  "name": "@izg/epub",
+  "exports": "./mod.ts",
+  "version": "0.1.0",
+  "license": "MIT"
 }

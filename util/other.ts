@@ -1,7 +1,7 @@
 export { normalize as removeDiacritics } from "path";
 
 export * from "./fetchable.ts";
-import * as dejs from "jsr:@hongminhee/dejs";
+import * as dejs from "jsr:@hongminhee/dejs@^0.10.5+jsr.1";
 import fetchable from "./fetchable.ts";
 import assets from "../assets.json" with { type: "json" };
 

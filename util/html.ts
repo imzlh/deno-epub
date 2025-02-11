@@ -1,4 +1,4 @@
-import { lookup, extensionsFromMimetype } from "jsr:@geacko/deno-mimetypes";
+import { lookup, extensionsFromMimetype } from "jsr:@geacko/deno-mimetypes@^1.0.4";
 import type { EPub } from "../epub.ts";
 import { fixHTML } from "./html-parse.ts";
 import { uuid } from "./other.ts";

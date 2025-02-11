@@ -7,7 +7,7 @@ const epub = (
   optionsOrTitle: Options | string,
   content: Content,
   ...args: (boolean | number)[]
-) => {
+): Promise<Uint8Array> => {
   ow(optionsOrTitle, ow.any(optionsPredicate, ow.string));
   const options = ow.isValid(optionsOrTitle, ow.string)
     ? { title: optionsOrTitle }
